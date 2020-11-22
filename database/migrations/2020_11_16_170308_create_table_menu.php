@@ -16,7 +16,7 @@ class CreateTableMenu extends Migration
         Schema::create('menu', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('group')->unique();
+            $table->string('group')->unique()->nullable();
             $table->integer('parent_id')->default(0);
             $table->integer('priority')->default(0);
             $table->timestamps();

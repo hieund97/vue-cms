@@ -21,4 +21,5 @@ Route::group([
     'prefix' => 'admin'
 ], function () {
     Route::get('/', 'DashboardController@index');
+    Route::get('/get-list-menu', 'MenuController@getListMenu')->name('get_list_menu');
 });
