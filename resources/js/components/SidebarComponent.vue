@@ -11,26 +11,26 @@
         </a>
 
         <!-- Divider -->
-        <hr class="sidebar-divider my-0">
+        <!-- <hr class="sidebar-divider my-0"> -->
 
         <!-- Nav Item - Dashboard -->
-        <li class="nav-item active">
+        <!-- <li class="nav-item active">
             <a class="nav-link" href="index.html">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Dashboard</span></a>
-        </li>
+        </li> -->
 
         <!-- Divider -->
         <hr class="sidebar-divider">
 
         <!-- Nav Item - Pages Collapse Menu -->
-        <li class="nav-item" v-for="menu in list_menu" :key="menu.id">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" v-bind:data-target="'#collapseTwo' + menu.id"
+        <li class="nav-item" v-for="(menu, k) in list_menu" :key="k">
+            <a class="nav-link collapsed" v-bind:href="menu.url" data-toggle="collapse" v-bind:data-target="'#collapse-' + k"
                 aria-expanded="true" aria-controls="collapseTwo">
-                <i class="fas fa-fw fa-cog"></i>
+                <i v-bind:class="menu.icon"></i>
                 <span>{{ menu.name }}</span>
             </a>
-            <div v-bind:id="'collapseTwo' + menu.id" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div  v-bind:id="'collapse-' + k" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <a class="collapse-item" href="buttons.html">Buttons</a>
                     <a class="collapse-item" href="cards.html">Cards</a>

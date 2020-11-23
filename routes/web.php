@@ -20,6 +20,6 @@ use Illuminate\Support\Facades\Route;
 Route::group([
     'prefix' => 'admin'
 ], function () {
-    Route::get('/', 'DashboardController@index');
+    Route::get('/', 'DashboardController@index')->name('dashboard');
     Route::get('/get-list-menu', 'MenuController@getListMenu')->name('get_list_menu');
 });

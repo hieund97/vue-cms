@@ -26,9 +26,8 @@ class MenuController extends Controller
      */
     public function getListMenu()
     {
-        $aryMenu = $this->menuRepository->getAll();
+        $aryMenu = config('menu');
         return response()->json($aryMenu, 200);
-        // return response()->json(['data' => $aryMenu, 'message' => 'success'], 200);
     }
 
     /**

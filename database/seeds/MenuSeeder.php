@@ -14,6 +14,7 @@ class MenuSeeder extends Seeder
         DB::table('menu')->insert([
             'name'       => 'Dashboard',
             'priority'   => '1',
+            'status'     => '1',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -21,7 +22,7 @@ class MenuSeeder extends Seeder
         DB::table('menu')->insert([
             'name'       => 'Menu',
             'priority'   => '2',
-            'group'      => 'Setting',
+            'status'     => '1',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
