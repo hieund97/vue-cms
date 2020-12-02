@@ -7,33 +7,22 @@
             <div class="sidebar-brand-icon rotate-n-15">
                 <i class="fas fa-laugh-wink"></i>
             </div>
-            <div class="sidebar-brand-text mx-3">SB Admin</div>
+            <div class="sidebar-brand-text mx-3">Vue CMS</div>
         </a>
-
-        <!-- Divider -->
-        <!-- <hr class="sidebar-divider my-0"> -->
-
-        <!-- Nav Item - Dashboard -->
-        <!-- <li class="nav-item active">
-            <a class="nav-link" href="index.html">
-                <i class="fas fa-fw fa-tachometer-alt"></i>
-                <span>Dashboard</span></a>
-        </li> -->
 
         <!-- Divider -->
         <hr class="sidebar-divider">
 
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item" v-for="(menu, k) in list_menu" :key="k">
-            <a class="nav-link collapsed" v-bind:href="menu.url" data-toggle="collapse" v-bind:data-target="'#collapse-' + k"
+            <a class="nav-link collapsed" v-bind:href="menu.url" v-bind:data-toggle="menu.child ? 'collapse' : ''" v-bind:data-target="'#collapse-' + k"
                 aria-expanded="true" aria-controls="collapseTwo">
                 <i v-bind:class="menu.icon"></i>
                 <span>{{ menu.name }}</span>
             </a>
-            <div  v-bind:id="'collapse-' + k" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <a class="collapse-item" href="buttons.html">Buttons</a>
-                    <a class="collapse-item" href="cards.html">Cards</a>
+            <div v-if="menu.child" v-bind:id="'collapse-' + k" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div  class="bg-white py-2 collapse-inner rounded">
+                    <a v-for="(child, index) in menu.child" :key="index" class="collapse-item" v-bind:href="child.url">{{ child.name }}</a>
                 </div>
             </div>
         </li>

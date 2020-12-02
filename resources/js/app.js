@@ -3,6 +3,7 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
+window.Chart = require('chart.js');
 
 import VueRouter from 'vue-router';
 Vue.use(VueRouter);

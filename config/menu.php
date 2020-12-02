@@ -5,7 +5,6 @@ return [
         'name'      => 'Dashboard',
         'icon'      => 'fas fa-fw fa-tachometer-alt',
         'url'       => '/admin',
-        'child'     => [],
     ],
 
     // Menu Product
@@ -15,13 +14,31 @@ return [
         'url'       => '/admin/product',
         'child'     => [
             'create_product' => [
-                'name'      => 'Product',
+                'name'      => 'Create Product',
                 'url'       => '/admin/product/create',
             ],
 
             'list_product' => [
-                'name'      => 'Product',
+                'name'      => 'List Product',
                 'url'       => '/admin/product',
+            ],
+        ],
+    ],
+
+    // Menu Category
+    'category' => [
+        'name'      => 'Category',
+        'icon'      => 'fas fa-shopping-bag',
+        'url'       => '/admin/category',
+        'child'     => [
+            'create_category' => [
+                'name'      => 'Create Category',
+                'url'       => '/admin/category/create',
+            ],
+
+            'list_category' => [
+                'name'      => 'List Category',
+                'url'       => '/admin/category',
             ],
         ],
     ],
